@@ -1,15 +1,23 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+export const Home = () => {
+	return (
+		<>
+			<body>
+				<div className="container" style={{ background: "black" }}>
+					<h3 className="text-light border-bottom pt-4">Characters</h3>
+					<div className="card mt-4 bg-dark text-white card-style" style={{ width: "18rem"}}>
+						<img className="card-img-top" style={{ borderTopLeftRadius: "20px",  borderTopRightRadius: "20px"}} src="https://cdna.artstation.com/p/assets/images/images/000/583/688/large/tony-foti-star-wars-tcg-endor-luke-by-anthonyfoti-d7v5ojb.jpg?1436604497" alt="Card image cap"></img>
+						<div className="card-body">
+							<h5 className="card-title">Luke Skywalker</h5>
+							<p className="card-text">Gender: male <br /> Hair Color: blond <br /> Eye Color: blue</p>
+							<div href="#" className="btn btn-outline-secondary">Learn more!</div>
+							<div href="#" className="btn btn-outline-danger" style={{ float: "right", border: "none"}}><i className="fa fa-heart" /></div>
+						</div>
+					</div>
+				</div>
+			</body>
+		</>
+	);
+} 

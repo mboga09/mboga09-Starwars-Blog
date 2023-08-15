@@ -1,3 +1,23 @@
 /* 
     General Styles
 */
+body{
+    background-image: url("https://wallpapercave.com/wp/wp4294276.jpg");
+}
+
+.card-style{
+    background-image: url("https://img.freepik.com/free-photo/black-smooth-textured-background_53876-101777.jpg");
+    border-radius:20px;
+
+}
+
+.btn{
+    border-radius:23px;
+}
+
+.card-style:hover{
+    border-color:rgb(250,222,75);
+    box-shadow: 0 0 15px rgb(250,222,75);
+    transform: translate3D(0,-1px,0) scale(1.03);
+    transition: all .4s ease;
+} 
