@@ -6,7 +6,7 @@ export const Navbar = () => {
 		<nav className="navbar navbar-dark bg-dark mb-3">
 			<div className="container"> {/*se pone container para generar margen a los lados*/}
 				<Link to="/">
-					<span className="navbar-brand mb-0"><img style={{ height: "90px" }} src="https://www.freepnglogos.com/uploads/star-wars-logo-0.png" ></img></span>
+					<span className="navbar-brand mb-0"><img className="mb-2" style={{ height: "90px" }} src="https://www.freepnglogos.com/uploads/star-wars-logo-0.png" ></img></span>
 				</Link>
 				<Link to="/demo">
 					<div className="ml-auto">
