@@ -18,6 +18,7 @@ export const Home = () => {
 		cargaData()
 	}, [])
 
+
 	return (
 		<>
 			<body>
@@ -26,9 +27,10 @@ export const Home = () => {
 				<button onClick={() => {actions.setPersona()}}>Cambiar persona</button>
 				*/}
 				<div className="container pb-4" style={{ background: "black" }}>
-					<h3 className="text-light border-bottom pt-4 pb-2">Characters</h3>
+					<h4 className="text-light border-bottom pt-4 pb-2">Characters</h4>
 
 					<div className="my-carousel">
+
 						{store.characters.map((item) => {
 							return (
 								<div className="card mt-4 bg-dark text-white card-style" style={{ width: "18rem" }}>
@@ -36,8 +38,8 @@ export const Home = () => {
 									<div className="card-body">
 										<h5 className="card-title">{item.properties.name}</h5>
 										<p className="card-text py-2">Gender: {item.properties.gender} <br /> Hair Color: {item.properties.hair_color} <br /> Eye Color: {item.properties.eye_color}</p>
-										<Link to={`/characters/${item._id}`} className="btn btn-outline-secondary">Learn more!</Link>
-										<div href="#" className="btn btn-outline-danger" style={{ float: "right", border: "none" }}><i className="fa fa-heart" /></div>
+										<Link to={`/characters/${item._id}`} className="btn btn-outline-secondary border-2">Learn more!</Link>
+										<div href="#" className="btn btn-outline-dark" style={{ float: "right", border: "none" }}><i className="fa fa-lg fa-star" style={{ color: "rgb(219,176,82)" }}/></div>
 									</div>
 								</div>
 							)
@@ -47,7 +49,7 @@ export const Home = () => {
 				</div>
 
 				<div className="container pb-4" style={{ background: "black" }}>
-					<h3 className="text-light border-bottom pt-4 pb-2">Planets</h3>
+					<h4 className="text-light border-bottom pt-4 pb-2">Planets</h4>
 
 					<div className="my-carousel">
 						{store.planets.map((item) => {
@@ -57,8 +59,8 @@ export const Home = () => {
 									<div className="card-body">
 										<h5 className="card-title">{item.properties.name}</h5>
 										<p className="card-text py-2">Population: {item.properties.population} <br /> Terrain: {item.properties.terrain}</p>
-										<Link to={`/planets/${item._id}`} href="#" className="btn btn-outline-secondary">Learn more!</Link>
-										<div href="#" className="btn btn-outline-danger" style={{ float: "right", border: "none" }}><i className="fa fa-heart" /></div>
+										<Link to={`/planets/${item._id}`} href="#" className="btn btn-outline-secondary border-2">Learn more!</Link>
+										<div href="#" className="btn btn-outline-dark" style={{ float: "right", border: "none" }}><i className="fa fa-lg fa-star" style={{ color: "rgb(219,176,82)" }}/></div>
 									</div>
 								</div>
 							)
