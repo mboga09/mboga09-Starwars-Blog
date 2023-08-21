@@ -2,11 +2,15 @@ import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link } from 'react-router-dom'
+import { addFavorite } from "/workspaces/mboga09-Starwars-Blog/src/js/store/favorites.js";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context)
 
+	
+
 	const [listaPersonas, setListaPersonas] = useState([])
+
 	//para traernos la info de los personajes
 	useEffect(() => {
 		const cargaData = async () => {
@@ -17,7 +21,6 @@ export const Home = () => {
 		}
 		cargaData()
 	}, [])
-
 
 	return (
 		<>
@@ -39,7 +42,7 @@ export const Home = () => {
 										<h5 className="card-title">{item.properties.name}</h5>
 										<p className="card-text py-2">Gender: {item.properties.gender} <br /> Hair Color: {item.properties.hair_color} <br /> Eye Color: {item.properties.eye_color}</p>
 										<Link to={`/characters/${item._id}`} className="btn btn-outline-secondary border-2">Learn more!</Link>
-										<div href="#" className="btn btn-outline-dark" style={{ float: "right", border: "none" }}><i className="fa fa-lg fa-star" style={{ color: "rgb(219,176,82)" }}/></div>
+										<div href="#" className="btn btn-outline-dark" onClick={() => addFavorite(item.properties.name)} style={{ float: "right", border: "none" }}><i className="fa fa-lg fa-star" style={{ color: "rgb(219,176,82)" }} /></div>
 									</div>
 								</div>
 							)
@@ -60,7 +63,7 @@ export const Home = () => {
 										<h5 className="card-title">{item.properties.name}</h5>
 										<p className="card-text py-2">Population: {item.properties.population} <br /> Terrain: {item.properties.terrain}</p>
 										<Link to={`/planets/${item._id}`} href="#" className="btn btn-outline-secondary border-2">Learn more!</Link>
-										<div href="#" className="btn btn-outline-dark" style={{ float: "right", border: "none" }}><i className="fa fa-lg fa-star" style={{ color: "rgb(219,176,82)" }}/></div>
+										<div href="#" className="btn btn-outline-dark" onClick={() => addFavorite(item.properties.name)} style={{ float: "right", border: "none", offsetDistance: "50%" }}><i className="fa fa-lg fa-star" style={{ color: "rgb(219,176,82)" }} /></div>
 									</div>
 								</div>
 							)

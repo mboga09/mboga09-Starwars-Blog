@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { deleteTask } from "/workspaces/mboga09-Starwars-Blog/src/js/store/favorites.js";
+
+
 
 export const Navbar = () => {
+
+	
+	
 
 	return (
 		<nav className="navbar navbar-dark bg-dark mb-3">
@@ -17,17 +23,29 @@ export const Navbar = () => {
 						</a>
 
 						<ul className="dropdown-menu dropdown-menu-end pr-1" aria-labelledby="dropdownMenuLink" style={{ width: "180px" }}>
-							<li><a className="dropdown-item" >
-								<div className="row">
-									<div className="col-10 pt-1">Luke Skywalker</div>
-									<div className="btn col-2" style={{ float: "right", border: "none" }}><i className="fa fa-trash" style={{ color: "rgb(0,151,205)" }} /></div>
-								</div>
-							</a></li>
+
+							<>{ //recordar agregar siempre el elemento key para .map
+								favoritesList.map((item, index) => {
+									{
+										return <li>
+											<div className="row">
+												<div className="col-10 dropdown-item task" key={index}>{item}</div>
+												<div className="col-2">
+													<button className="buttonStyle" type="button" onClick={e => { deleteTask(index) }}>
+													<i className="fa fa-trash"></i>
+													</button></div>
+											</div>
+										</li>
+									}
+								})
+							}</>
+
 						</ul>
 					</div>
 				</div>
 
 			</div>
+
 		</nav>
 	);
 };
